@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Profiles</title>
+</head>
+<body>
+    <p>Profiles table</p>
+    <table>
+        <tr>
+            <th>username</th>
+            <th>full name</th>
+        </tr>
+        {% for row in profile_rows %}
+        <tr>
+            <td>{{ row[0] }}</td>
+            <td>{{ row[1] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
