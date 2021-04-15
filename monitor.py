@@ -32,3 +32,7 @@ def profile_followers(userid: int):
                        f"WHERE followers.userid={userid}")
         profile_rows = cursor.fetchall()
     return render_template("profiles.html", profile_rows=profile_rows)
+
+
+if __name__ == "__main__":
+    monitor.run(host='0.0.0.0')
