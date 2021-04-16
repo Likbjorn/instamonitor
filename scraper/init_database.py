@@ -1,9 +1,8 @@
+import os
 import sqlite3
 
-from dotenv import dotenv_values
-
-config = dotenv_values(".env")
-DB_LOCATION = config["DB_LOCATION"]
+DB_LOCATION = os.getenv("DB_LOCATION")
+print(DB_LOCATION)
 
 if __name__ == "__main__":
     # create db
@@ -40,3 +39,4 @@ if __name__ == "__main__":
                      "FOREIGN KEY (follower_id)"
                      "  REFERENCES profiles (userid)"
                      "    ON DELETE CASCADE);")
+    print(f"db created at {DB_LOCATION}")

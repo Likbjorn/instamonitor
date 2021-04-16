@@ -9,6 +9,7 @@ verify_ssl = true
 instaloader = "*"
 python-dotenv = "*"
 flask = "*"
+celery= "*"
 
 [requires]
 python_version = "3.7"

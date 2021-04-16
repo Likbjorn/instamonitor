@@ -5,7 +5,7 @@ from datetime import datetime
 from dotenv import dotenv_values
 from instaloader import Profile, Post, InstaloaderContext
 
-config = dotenv_values(".env")
+config = dotenv_values("../.env")
 DB_LOCATION = config["DB_LOCATION"]
 
 logging.basicConfig(level=logging.DEBUG)

@@ -1,10 +1,9 @@
 import sqlite3
 
-from dotenv import dotenv_values
+import os
 from flask import Flask, render_template
 
-config = dotenv_values(".env")
-DB_LOCATION = config["DB_LOCATION"]
+DB_LOCATION = os.getenv("DB_LOCATION")
 
 monitor = Flask(__name__)
 

@@ -1,0 +1,25 @@
+version: '3.7'
+services:
+  web:
+    build:
+      context: ./monitor
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+    - "5000:5000"
+    volumes:
+    - './monitor:/monitor'
+    - './db:/db'
+    env_file: .env
+  worker:
+    build:
+      context: ./scraper
+      dockerfile: Dockerfile
+    depends_on:
+      - redis
+    volumes:
+    - './scraper:/scraper'
+    - './db:/db'
+    env_file: [.env, .env.private]
+  redis:
+    image: redis

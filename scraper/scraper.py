@@ -1,9 +1,9 @@
 from dotenv import dotenv_values
 from instaloader import Instaloader, Profile
 
-from update_db import update_followers, update_posts, update_likes_all_posts, update_followings
+from scraper.update_db import update_followers, update_posts, update_likes_all_posts, update_followings
 
-config = dotenv_values(".env.private")
+config = dotenv_values("../.env.private")
 LOGIN = config["LOGIN"]
 PASSWORD = config["PASSWORD"]
 
