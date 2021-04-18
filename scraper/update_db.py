@@ -1,3 +1,4 @@
+import os
 import logging
 import sqlite3
 from datetime import datetime
@@ -5,8 +6,7 @@ from datetime import datetime
 from dotenv import dotenv_values
 from instaloader import Profile, Post, InstaloaderContext
 
-config = dotenv_values("../.env")
-DB_LOCATION = config["DB_LOCATION"]
+DB_LOCATION = os.environ.get("DB_LOCATION")
 
 logging.basicConfig(level=logging.DEBUG)
 
