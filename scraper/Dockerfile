@@ -14,4 +14,4 @@ WORKDIR /scraper
 # RUN python init_database.py -e DB_LOCATION=$DB_LOCATION
 
 # TODO: run init_databese.py separately
-ENTRYPOINT python init_database.py && celery -A celery_tryout worker --loglevel=info
+ENTRYPOINT python init_database.py && celery -A tasks worker -B --loglevel=info

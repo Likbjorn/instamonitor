@@ -1,6 +1,6 @@
 version: '3.7'
 services:
-  web:
+  monitor:
     build:
       context: ./monitor
       dockerfile: Dockerfile
@@ -11,7 +11,7 @@ services:
     - './monitor:/monitor'
     - './db:/db'
     env_file: .env
-  worker:
+  scraper:
     build:
       context: ./scraper
       dockerfile: Dockerfile
